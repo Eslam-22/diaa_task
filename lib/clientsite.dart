@@ -40,7 +40,7 @@ if(isIntigram==false){
   Widget build(BuildContext context) {
 
     return Scaffold(
-appBar: AppBar(centerTitle: true,backgroundColor: Colors.orange,title: Text("عقارك",style: TextStyle(color: Colors.white),),),
+appBar: AppBar(centerTitle: true,backgroundColor: Colors.orange,title: Text("عقار الكويت",style: TextStyle(color: Colors.white),),),
       body: WebView(
         initialUrl: 'https://q8aqar.com/app/1/',
         javascriptMode: JavascriptMode.unrestricted,
@@ -59,11 +59,12 @@ appBar: AppBar(centerTitle: true,backgroundColor: Colors.orange,title: Text("ع�
             _launchURL(isPhoneCall: true);
 
             SystemChannels.platform.invokeMethod('SystemNavigator.pop');
-          }  else if (request.url.contains("instagram")) {
+          }  else if (request.url.contains("instagram")||request.url.contains("twitter")||request.url.contains("mailto")) {
             url=request.url;
             _launchURL(isPhoneCall: false,isIntigram: true);
             return NavigationDecision.prevent;
           }
+   
           return NavigationDecision.navigate;
         },
       ),
