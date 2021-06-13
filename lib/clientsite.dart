@@ -64,7 +64,7 @@ appBar: AppBar(centerTitle: true,backgroundColor: Colors.orange,title: Text("Ø¹Ù
             _launchURL(isPhoneCall: false,isIntigram: true);
             return NavigationDecision.prevent;
           }
-   
+
           return NavigationDecision.navigate;
         },
       ),
